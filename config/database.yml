@@ -79,7 +79,4 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: lcapi_production
-  username: lcapi
-  password: <%= ENV['LCAPI_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
