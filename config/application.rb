@@ -28,5 +28,7 @@ module Lcapi
     config.api_only = true
 
     config.time_zone = 'Tokyo'
+
+    config.x.access_token = ENV['ACCESS_TOKEN']
   end
 end
