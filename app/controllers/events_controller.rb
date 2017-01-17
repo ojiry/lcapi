@@ -15,7 +15,8 @@ class EventsController < ApplicationController
 
   # POST /events
   def create
-    @event = Event.new(event_params)
+    @user = User.first
+    @event = @user.events.new(event_params)
 
     if @event.save
       render json: @event, status: :created, location: @event
@@ -46,6 +47,6 @@ class EventsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def event_params
-      params.require(:event).permit(:title, :scheduled_at, :place, :user_id)
+      params.require(:event).permit(:title, :scheduled_at, :place)
     end
 end
