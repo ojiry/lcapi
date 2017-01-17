@@ -15,7 +15,7 @@ class EventsController < ApplicationController
 
   # POST /events
   def create
-    @user = User.first
+    @user = User.find_by!(username: params[:username])
     @event = @user.events.new(event_params)
 
     if @event.save
@@ -42,11 +42,11 @@ class EventsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_event
-      @event = Event.find(params[:id])
+      @event = Event.find_by!(title: params[:title])
     end
 
     # Only allow a trusted parameter "white list" through.
     def event_params
-      params.require(:event).permit(:title, :scheduled_at, :place)
+      params.permit(:title, :scheduled_at, :place)
     end
 end
