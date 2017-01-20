@@ -3,7 +3,7 @@ class Events::ParticipatesController < ApplicationController
   before_action :set_user, only: :create
 
   def create
-    @participation = @user.participations.new(event: @event)
+    @participation = @user.participations.find_or_initialize_by(event: @event)
 
     if @participation.save
       render json: @participation, status: :created
