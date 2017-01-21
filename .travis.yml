@@ -1,0 +1,17 @@
+sudo: false
+services:
+  - postgresql
+language: ruby
+before_install: gem install bundler
+rvm:
+  - 2.4.0
+  - ruby-head
+matrix:
+  allow_failures:
+    - rvm: ruby-head
+before_script:
+  - bin/rails db:create
+  - bin/rails db:migrate
+script:
+  - bundle exec rubocop
+  - bin/rspec spec
