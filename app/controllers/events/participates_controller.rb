@@ -15,7 +15,7 @@ class Events::ParticipatesController < ApplicationController
 
   private
     def set_event
-      @event = Event.find(params[:event_id])
+      @event = Event.enabled.find(params[:event_id])
     end
 
     def set_user

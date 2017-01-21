@@ -4,7 +4,7 @@ class EventsController < ApplicationController
   before_action :set_user, only: :create
 
   def index
-    @events = Event.all
+    @events = Event.enabled.all
 
     render json: @events
   end

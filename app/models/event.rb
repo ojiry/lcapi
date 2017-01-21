@@ -8,6 +8,9 @@ class Event < ApplicationRecord
   validates :name, presence: true, uniqueness: { scope: :scheduled_at }
   validates :scheduled_at, presence: true
 
+  # TODO: Think of a scope name
+  scope :enabled, -> { where(arel_table[:scheduled_at].gt(Time.current)) }
+
   def as_json(options = nil)
     super(options&.merge(include: :applied_users))
   end

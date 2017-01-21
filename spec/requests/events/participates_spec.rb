@@ -4,7 +4,7 @@ require 'rails_helper'
 RSpec.describe "Events::Participates", type: :request do
   describe "POST /events/:event_id/participates" do
     let(:user) { User.create email: "testuser@example.com", username: "testuser" }
-    let(:event) { user.events.create name: "testevent", scheduled_at: Time.current }
+    let(:event) { user.events.create name: "testevent", scheduled_at: 1.day.since }
     let(:params) { { username: user.username }.to_json }
 
     let(:headers) do
