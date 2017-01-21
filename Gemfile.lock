@@ -65,7 +65,7 @@ GEM
     nio4r (1.2.1)
     nokogiri (1.7.0.1)
       mini_portile2 (~> 2.1.0)
-    otacop (0.5.2)
+    otacop (0.5.3)
       rubocop (~> 0.47)
     parser (2.3.3.1)
       ast (~> 2.2)
