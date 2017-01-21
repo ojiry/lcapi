@@ -5,7 +5,7 @@ RSpec.describe Event, type: :model do
   let(:event) { Event.new name: 'testevent', scheduled_at: Time.current }
 
   describe "#as_json" do
-    let(:json) {
+    let(:json) do
       {
         id: event.id,
         name: event.name,
@@ -15,7 +15,7 @@ RSpec.describe Event, type: :model do
         created_at: event.created_at,
         updated_at: event.updated_at
       }.stringify_keys
-    }
+    end
 
     subject { event.as_json }
 

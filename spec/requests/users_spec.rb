@@ -1,13 +1,14 @@
+# frozen_string_literal: true
 require 'rails_helper'
 
 RSpec.describe "Users", type: :request do
   describe "GET /users" do
-    let(:headers) {
+    let(:headers) do
       {
         'Authorization': "Token #{Rails.configuration.x.access_token}",
         'Content-Type': 'application/json'
       }
-    }
+    end
 
     subject { response }
 

@@ -1,13 +1,14 @@
+# frozen_string_literal: true
 require 'rails_helper'
 
 RSpec.describe "Events", type: :request do
   describe "GET /events" do
-    let(:headers) {
+    let(:headers) do
       {
         'Authorization': "Token #{Rails.configuration.x.access_token}",
         'Content-Type': 'application/json'
       }
-    }
+    end
 
     subject { response }
 
