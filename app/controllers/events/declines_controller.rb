@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class Events::DeclinesController < ApplicationController
   before_action :set_event, only: :destroy
   before_action :set_user, only: :destroy

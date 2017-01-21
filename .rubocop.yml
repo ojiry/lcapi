@@ -1,0 +1,10 @@
+inherit_gem:
+  otacop:
+    - "config/default.yml"
+    - "config/rails.yml"
+
+AllCops:
+  Exclude:
+    - 'db/schema.rb'
+    - 'vendor/**/*'
+  TargetRubyVersion: 2.4

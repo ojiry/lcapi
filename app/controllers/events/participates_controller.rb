@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class Events::ParticipatesController < ApplicationController
   before_action :set_event, only: :create
   before_action :set_user, only: :create

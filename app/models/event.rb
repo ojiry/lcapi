@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class Event < ApplicationRecord
   belongs_to :user
 
@@ -8,6 +9,6 @@ class Event < ApplicationRecord
   validates :scheduled_at, presence: true
 
   def as_json(options = nil)
-    super(options.merge({ include: :applied_users }))
+    super(options.merge(include: :applied_users))
   end
 end
